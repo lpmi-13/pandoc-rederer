@@ -1,3 +1,9 @@
 pandoc -f html --wrap=none -t markdown_github+backtick_code_blocks+autolink_bare_uris+raw_html -o output.md URL_GOES_HERE
 
 wget -E -H -k -K -p -e robots=off URL_GOES_HERE
+
+wget --mirror --convert-links --adjust-extension --page-requisites 
+--no-parent -w 3 URL_GOES_HERE
+
+wget -mk --convert-links --adjust-extension --page-requisites --no-parent -r --follow-tags=iframe -w 3 -e robots=off URL_GOES_HERE
+(currently kind of working)
